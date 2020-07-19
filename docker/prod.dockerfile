@@ -9,7 +9,9 @@ ARG BASE_HREF=/
 RUN apk add wget unzip
 
 # Download openvidu-call from specific branch (master by default), intall openvidu-browser and build for production
-RUN wget "https://github.com/OpenVidu/openvidu-call/archive/${BRANCH_NAME}.zip" -O openvidu-call.zip && \
+## https://github.com/mohanluc/openvidu-call.git
+
+RUN wget "https://github.com/mohanluc/openvidu-call/archive/${BRANCH_NAME}.zip" -O openvidu-call.zip && \
     unzip openvidu-call.zip && \
     rm openvidu-call.zip && \
     mv openvidu-call-${BRANCH_NAME}/openvidu-call-front/ . && \
